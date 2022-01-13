@@ -44,6 +44,7 @@ shared:
   ## Variables for command 'job'
   job_rss: "@devops_jobs_feed @sre_devops_jobs_rss"
   ## Variable for command 'man'
+  # yamllint disable rule:line-length
   commands_help: |-
     *User commands:*
     \- `/man` \- send list of commands to chat
@@ -61,6 +62,8 @@ shared:
     \- `/report` \- forward replied message to admin chat and send link of replied message for fast\-navigation \(works on replied message\)
     \- `/summon` \- summon HR to DevOps Jobs chat \(works on replied message\)
     \- `/hrman` \- send HR man for user
+
+  # yamllint enable rule:line-length
 
   ## Variable for commands 'starter\middle\certification'
   study: devops
@@ -108,6 +111,7 @@ shared:
   delete_service_message: true
   # Variables
   ## Variable for command 'man'
+  # yamllint disable rule:line-length
   commands_help: |-
     *User commands:*
     \- `/man` \- send list of commands to chat
@@ -123,6 +127,8 @@ shared:
     \- `/cert` \- send user list of certification tips & tricks
     \- `/relocate` \- send user list of relocate chats and channels
     \- `/report` \- forward replied message to admin chat and send link of replied message for fast\-navigation
+
+  # yamllint enable rule:line-length
 
   ## Variable for commands 'starter\middle\certification'
   study: devops
@@ -168,6 +174,7 @@ shared:
   delete_service_message: false
   # Variables
   ## Variable for command 'man'
+  # yamllint disable rule:line-length
   commands_help: |-
     *Admin commands:*
 
@@ -195,6 +202,8 @@ shared:
     \- `/summon` \- summon HR to DevOps Jobs chat \(works on replied message\)
 
     *All commands are disabled in admin chat\.*
+
+  # yamllint enable rule:line-length
 
 
 "-1001112614954":  # TelRan++
@@ -227,6 +236,7 @@ shared:
   delete_service_message: false
   # Variables
   ## Variable for command 'man'
+  # yamllint disable rule:line-length
   commands_help: |-
     *User commands:*
     \- `/man` \- send list of commands to chat
@@ -235,6 +245,8 @@ shared:
     \- `/middle` \- send middle kit to user
     \- `/course` \- send to user list list of courses
     \- `/cert` \- send user list of certification tips & tricks
+
+  # yamllint enable rule:line-length
 
   ## Variable for commands 'starter\middle\certification'
   study: devops

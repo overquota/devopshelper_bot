@@ -149,12 +149,7 @@ class Base:
 
     def available_commands(self, update):
         self.section = str(update.message.chat.id)
-        file = open(
-            "helps/"
-            + config.get(self.section, {}).get("commands_list")
-            + "/commands.txt"
-        )
-        return file
+        return config.get(self.section, {}).get("commands_help")
 
     def moveIDs(self, update):
         self.section = str(update.message.chat.id)

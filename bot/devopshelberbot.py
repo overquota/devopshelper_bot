@@ -1,12 +1,13 @@
 import logging
 import datetime
-import configparser
-import argparse
 import inspect
+import os
 import re
 import shlex
 from mwt import MWT
 from dbhelper import DBHelper
+import yaml
+
 from telegram import ChatPermissions
 from telegram.ext import MessageHandler, Filters, CommandHandler, Updater
 
@@ -17,36 +18,12 @@ logger = logging.getLogger(__name__)
 
 db = DBHelper()
 
-parser = argparse.ArgumentParser(
-    description="Bot for helping in administration in DevOps groups in TG"
-)
+telegram_token = os.environ.get("APP_TELEGRAM_BOT_TOKEN")
+config_path = os.environ.get("APP_CONFIG_PATH")
 
-parser.add_argument(
-    "-b",
-    "--bottoken",
-    dest="bottoken",
-    type=str,
-    default="1231423",
-    help="Bot token for TG API",
-)
-parser.add_argument(
-    "-e",
-    "--environment",
-    dest="environment",
-    type=str,
-    default="config.ini",
-    help="Environment for bot",
-)
+config = yaml.load(config_path, loader=yaml.BaseLoader)
 
-args = parser.parse_args()
-bottoken = args.bottoken
-environment = args.environment
-config = configparser.ConfigParser()
-# config.read('config.ini')
-config.read(environment)
-
-# bottoken= str(sys.argv[1])
-updater = Updater(token=bottoken, use_context=True)
+updater = Updater(token=telegram_token, use_context=True)
 dispatcher = updater.dispatcher
 
 

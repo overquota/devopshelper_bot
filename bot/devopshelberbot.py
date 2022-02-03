@@ -167,9 +167,7 @@ class Base:
         matches_job = match_job.search(update.message.reply_to_message.text)
         matches_work = match_work.search(update.message.reply_to_message.text)
         rss_link = re.sub("@", "https://t.me/", job_channels[0])
-        msg = str(update.message.reply_to_message.text)
-        escTable = msg.maketrans(self.esc_map)
-        escMsg = msg.translate(escTable)
+        msg = update.message.reply_to_message.text_markdown_v2_urled
         user_id = update.message.reply_to_message.from_user.mention_markdown_v2()
         ChatUsername = str(update.message.chat.username)
         escTable = ChatUsername.maketrans(self.esc_map)
@@ -179,7 +177,7 @@ class Base:
             matches_work,
             rss_link,
             job_channels,
-            escMsg,
+            msg,
             user_id,
             escChatUsername,
         )

@@ -1,5 +1,6 @@
 __pycache__
 .vscode
+.idea
 ./bot/__pycache__
 /dev
 todo.sqlite
